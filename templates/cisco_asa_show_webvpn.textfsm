@@ -1,0 +1,9 @@
+Value INTERFACE (\S+)
+Value ANYCONNECT (\S+)
+Value PORT (\S+)
+
+Start
+  ^webvpn.*$$
+  ^\sport\s${PORT}.*$$
+  ^\senable\s${INTERFACE}.*$$
+  ^\sanyconnect\s${ANYCONNECT}.*$$ -> Record
