@@ -1,0 +1,9 @@
+Value IFACE (\S+)
+Value NAME (\S+)
+Value IP_ADDRESS (\d+\.\d+\.\d+\.\d+)
+Value NET_MASK (\d+\.\d+\.\d+\.\d+)
+Value METHOD (\S+)
+
+Start
+ ^System\sIP.*$$                                                                                                                                                   ^Interface.*$$                                                                                                                                                    ^Current\sIP.*$$ -> BottomHalf                                                                                                                                    ^${IFACE}\s+${NAME}\s+${IP_ADDRESS}\s+${NET_MASK}\s+${METHOD} -> Record                                                                                        
+BottomHalf                                                                                                                                                          ^Interface\s+Name.*$$                                                                                                                                             ^${IFACE}\s+${NAME}\s+${IP_ADDRESS}\s+${NET_MASK}\s+${METHOD} 
