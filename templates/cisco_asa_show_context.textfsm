@@ -1,0 +1,5 @@
+Value CONTEXT (\S+)
+
+Start
+ ^\s${CONTEXT}.*$$ -> Record
+ ^\*${CONTEXT}.*$$ -> Record
