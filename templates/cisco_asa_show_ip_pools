@@ -1,0 +1,17 @@
+Value BEGIN (\d+\.\d+\.\d+\.\d+)
+Value END (\d+\.\d+\.\d+\.\d+)
+Value MASK (\d+\.\d+\.\d+\.\d+)
+#Value BEGIN (\S+)
+#Value END (\S+)
+#Value MASK (\S+)
+Value FREE (\S+)
+Value HELD (\S+)
+Value IN_USE (\S+)
+
+Start
+  ^Begin\s+End.*$$ -> Line
+  #^${BEGIN}\s+${END}\s+${MASK}\s+${FREE}\s+${HELD}*$$ -> Record
+
+Line
+  ^${BEGIN}\s+${END}\s+${MASK}\s+${FREE}\s+${HELD}\s+${IN_USE}.*$$ -> Record
+  ^.* -> Start
