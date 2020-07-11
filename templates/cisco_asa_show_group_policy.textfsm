@@ -1,4 +1,4 @@
 Value LINE (.*)
 
 Start
-  ^\s+vpn-tunnel-protocol\s+${LINE}$$ -> Line
+  ^\s+vpn-tunnel-protocol\s+${LINE}$$ -> Record
