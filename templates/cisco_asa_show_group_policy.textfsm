@@ -1,0 +1,4 @@
+Value LINE (.*)
+
+Start
+  ^\s+vpn-tunnel-protocol\s+${LINE}$$ -> Line
