@@ -1,9 +1,11 @@
 Value INTERFACE (\S+)
 Value ANYCONNECT (\S+)
 Value PORT (\S+)
+Value TUNNEL_GROUP_LIST (\S+)
 
 Start
   ^webvpn.*$$
   ^\sport\s${PORT}.*$$
   ^\senable\s${INTERFACE}.*$$
   ^\sanyconnect\s${ANYCONNECT}$$ -> Record
+  ^\stunnel-group-list\s${TUNNEL_GROUP_LIST}$$
