@@ -6,4 +6,4 @@ Start
   ^webvpn.*$$
   ^\sport\s${PORT}.*$$
   ^\senable\s${INTERFACE}.*$$
-  ^\sanyconnect\s${ANYCONNECT}.*$$ -> Record
+  ^\sanyconnect\s${ANYCONNECT}$$ -> Record
