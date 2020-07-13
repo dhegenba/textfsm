@@ -1,5 +1,6 @@
 Value LINE (.*)
+Value GROUP_NAME (\S+)
 
 Start
-  ^group-policy\s\S+\sattributes$$
+  ^group-policy\s${GROUP_NAME}\sattributes$$
   ^\s+vpn-tunnel-protocol\s+${LINE}$$ -> Record
