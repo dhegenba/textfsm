@@ -1,0 +1,55 @@
+Value EntryNumber (\d+)
+Value Owner (\S+)
+Value Tag (\S+)
+Value OperationalTimeout (\d+)
+Value TypeOfOperation (\S+)
+Value TargetAddress (\d+\.\d+\.\d+\.\d+)
+Value SourceAddress (\d+\.\d+\.\d+\.\d+)
+Value ToSParam (\S+)
+Value RequestSize (\d+)
+Value DataPattern (\S+)
+Value VerifyData (\S+)
+Value VrfName (\S+)
+Value OperationFrequency (\d+)
+Value NextScheduledStartTime (.*)
+Value GroupScheduled (\S+)
+Value RandomlyScheduled (\S+)
+Value Life (\S+)
+Value EntryAgent (\S+)
+Value Recurring (\S+)
+Value StatusOfEntry (\S+)
+Value Threshold (\d+)
+Value NumberStatisticsHoursKept (\d+)
+Value NumberStatisticsDistributionBucketsKept (\d+)
+Value StatisticsDistributionInterval (\d+)
+Value NumberOfHistoryLivesKept (\d+)
+Value NumberOfHistoryBucketsKept (\d+)
+Value HistoryFilterType (\S+)
+
+Start
+  ^Entry:.+${EntryNumber}$$
+  ^Owner:\s${Owner}$$
+  ^Tag:\s$Tag$$
+  ^Operational\stimeout.+:\s${OperationalTimeout}$$
+  ^Type\sof\soperation\sto\sperform:\s${TypeOfOperation}$$
+  ^Target\saddress.+:\s${TargetAddress}\/${SourceAddress}$$
+  ^Type\sOf\sService\sparameter:\s${ToSParam}$$
+  ^Request\ssize.+:\s${RequestSize}$$
+  ^Data\spattern:\s${DataPattern}$$
+  ^Verify\sdata:\s${VerifyData}$$
+  ^Vrf\sName:\s${VrfName}$$
+  ^\s+Operation\sfrequency.+:\s${OperationFrequency}.+$$
+  ^\s+Next\sScheduled.+:\s${NextScheduledStartTime}$$
+  ^\s+Group\sScheduled.*:\s${GroupScheduled}$$
+  ^\s+Randomly\sScheduled.*:\s${RandomlyScheduled}$$
+  ^\s+Life.+:\s${Life}$$
+  ^\s+Entry\sAgeout.+:\s${EntryAgent}$$
+  ^\s+Recurring.+:\s${Recurring}$$
+  ^\s+Status\sof\sentry.+:\s${StatusOfEntry}$$
+  ^Threshold.+:\s${Threshold}$$
+  ^\s+Number\sof\sstatistic\shours\skept:\s${NumberStatisticsHoursKept}$$
+  ^\s+Number\sof\sstatistic\sdistribution\sbuckets\skept:\s${NumberStatisticsDistributionBucketsKept}$$
+  ^\s+Statistic\sdistribution\sinterval.+:\s${StatisticsDistributionInterval}$$
+  ^\s+Number\sof\shistory\sLives\skept:\s${NumberOfHistoryLivesKept}$$
+  ^\s+Number\sof\shistory\sBuckets\skept:\s${NumberOfHistoryBucketsKept}$$
+  ^\s+History\sFilter\sType:\s${HistoryFilterType}$$ -> Record
