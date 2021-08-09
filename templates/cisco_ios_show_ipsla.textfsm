@@ -27,7 +27,7 @@ Value NumberOfHistoryBucketsKept (\d+)
 Value HistoryFilterType (\S+)
 
 Start
-  ^Entry\snumber:\d+${EntryNumber}$$
+  ^Entry\snumber:..+${EntryNumber}$$
   ^Owner:\s${Owner}$$
   ^Tag:\s$Tag$$
   ^Operation\stimeout.+:\s${OperationalTimeout}$$
