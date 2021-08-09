@@ -1,4 +1,4 @@
-Value EntryNumber (\d\d)
+Value EntryNumber (\d+)
 Value Owner (\S+)
 Value Tag (\S+)
 Value OperationalTimeout (\d+)
@@ -27,7 +27,7 @@ Value NumberOfHistoryBucketsKept (\d+)
 Value HistoryFilterType (\S+)
 
 Start
-  ^Entry\snumber:.+${EntryNumber}$$
+  ^Entry\snumber:\s${EntryNumber}$$
   ^Owner:\s${Owner}$$
   ^Tag:\s$Tag$$
   ^Operation\stimeout.+:\s${OperationalTimeout}$$
