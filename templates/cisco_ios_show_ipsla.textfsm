@@ -1,4 +1,4 @@
-Value EntryNumber (\d+)
+Value EntryNumber (\d\d)
 Value Owner (\S+)
 Value Tag (\S+)
 Value OperationalTimeout (\d+)
