@@ -1,0 +1,24 @@
+#Value ROUTE (\d+\.\d+\.\d+\.\d+\/\d+|[0-9a-f:]*)
+Value ROUTE (\S+)
+Value TYPE (\S+)
+Value PROTO (\S+|\S+\s\S+)
+Value AGE (\S+)
+Value PREF (\d+)
+Value NEXT_HOP (\S+\s\S+|\S+)
+Value METRIC (\d+)
+
+Start
+  ^----------- -> Route   
+
+Route
+  #^${ROUTE}.*$$ -> Record
+  ^${ROUTE}\s+${TYPE}\s+${PROTO}\s+${AGE}\s+${PREF}\s*$$ -> SecondLine
+  ^----------- -> Done
+  
+SecondLine
+  ^\s+${NEXT_HOP}\s+${METRIC}\s*$$ -> Record Route 
+  ^----------- -> Done
+  ^. -> Error
+  
+Done
+  ^.*$$
