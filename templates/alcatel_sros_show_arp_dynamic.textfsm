@@ -1,0 +1,18 @@
+Value IP (\S+)
+Value MAC (\S+)
+Value EXPIRY (\S+)
+Value TYPE (\S+)
+Value INTERFACE (\S+)
+
+Start
+  ^----------- -> ARP
+
+ARP
+  ^${IP}\s+${MAC}\s+${EXPIRY}\s+${TYPE}\s+${INTERFACE}\s*$$ -> Record
+  ^\s*$$
+  ^----------- -> Done
+  ^===========
+  ^No\.\sof.*$$
+  ^. -> Error
+  
+Done
