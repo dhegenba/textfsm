@@ -1,0 +1,20 @@
+Value PEER_LDP_ID (\S+)
+Value ADJ_TYPE (\S+)
+Value STATE (\S+)
+Value MSG_SENT (\d+)
+Value MSG_RCVD (\d+)
+Value UP_TIME (\S+)
+
+
+Start
+  ^----------- -> Interface
+
+Interface
+  ^${PEER_LDP_ID}\s+${ADJ_TYPE}\s+${STATE}\s+${MSG_SENT}\s+${MSG_RCVD}\s+${UP_TIME}.*$$ -> Record
+  ^----- -> Done
+  ^\s*$$
+  ^No
+  ^=====
+  ^. -> Error
+  
+Done
