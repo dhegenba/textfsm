@@ -1,0 +1,26 @@
+Value INTERFACE_NAME (\S+)
+Value RTR_ID (\S+)
+Value STATE (\S+)
+Value PRIORITY (\d+)
+Value RETX_Q (\d+)
+Value TTL (\d+)
+Value AREA_ID (\S+)  
+
+
+Start
+  ^----------- -> Interface
+
+Interface
+  ^\s*${INTERFACE_NAME}\s+${RTR_ID}\s+${STATE}\s+${PRIORITY}\s+${RETX_Q}\s+${TTL}.*$$ -> Area
+  ^----- -> Done
+  ^.*----- -> Done
+  ^\s*$$
+  ^No
+  ^=====
+  ^. -> Error
+  
+Area
+  ^\s*${AREA_ID}\s*$$ -> Record Interface
+  ^------ -> Done
+  
+Done
