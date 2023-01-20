@@ -1,0 +1,15 @@
+Value Event (.*)
+Value Source (.*)
+Value Interface (.*)
+Value Direction (.*)
+Value Destination (.*)
+Value Interface2 (.*)
+Value Direction2 (.*)
+Value Filter (.*)
+Value Metric (.*)
+Value Value (.*)
+Value Unit (.*)
+Value Time (.*)
+
+Start
+  ^Threshold triggered - ${Event} - ${Source} - ${Interface} - ${Direction} - ${Destination} ${Interface2} ${Direction2} - view: Top Conversations with Application and ToS and Direction, filter: ${Filter}, ${Metric} Minimum ${Value} Number > 1.00 Number over ${Time} seconds$ -> Record
